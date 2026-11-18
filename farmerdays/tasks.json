@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build farmer",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "${workspaceFolder}/farmer_day_3d_imp.cpp",
+        "-O2",
+        "-o", "${workspaceFolder}/farmer_day_3d_imp.exe",
+        "-lfreeglut", "-lopengl32"
+      ],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run farmer",
+      "type": "shell",
+      "command": "${workspaceFolder}/farmer_day_3d_imp.exe",
+      "dependsOn": "Build farmer",
+      "problemMatcher": []
+    }
+  ]
+}
